@@ -618,7 +618,6 @@ Disclaimer: \*The names of locations included on the Website correspond with the
 1. Fork the repository if you haven't done so earlier
 1. Edit the files in the [csse_covid_19_daily_reports](csse_covid_19_daily_reports/) directory that correspond to the dates for which you want to change data
 1. Edit the files in the [csse_covid_19_time_series](csse_covid_19_time_series/) directory that correspond to the data that you changed in the previous step, so that your changes to the data are reflected
-1. Edit this README file to include an entry in the [Data modification records](#data-modification-records) that describes the change that you propose using the general format:
-    Date: Location | Change | Files affected | Reason/Other notes | Source
+1. Edit this README file to include an entry in the [Data modification records](#data-modification-records) that describes the change that you propose using the general format: `Date: Location | Change | Files affected | Reason/Other notes | Source`
 1. Commit your changes
-1. Create a pull request that includes the description of the changes proposed
+1. Create a pull request that includes the description of the changes proposed (the data modification records entry) as a comment
