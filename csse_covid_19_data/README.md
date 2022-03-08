@@ -10,6 +10,7 @@
  * [Large-scale back distributions](#large-scale-back-distributions)
  * [Irregular Update Schedules](#irregular-update-schedules)
  * [UID Lookup Table Logic](#uid-lookup-table-logic)
+ * [How to Suggest a Change in the Data](#how-to-suggest-changes)
 ---
 
 ## [Daily reports (csse_covid_19_daily_reports)](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)
@@ -36,7 +37,7 @@ MM-DD-YYYY.csv in UTC.
 
 ### Update frequency
 * Since June 15, We are moving the update time forward to occur between 04:45 and 05:15 GMT to accommodate daily updates from India's Ministry of Health and Family Welfare.
-* Files on and after April 23, once per day between 03:30 and 04:00 UTC. 
+* Files on and after April 23, once per day between 03:30 and 04:00 UTC.
 * Files from February 2 to April 22: once per day around 23:59 UTC.
 * Files on and before February 1: the last updated files before 23:59 UTC. Sources: [archived_data](https://github.com/CSSEGISandData/COVID-19/tree/master/archived_data) and dashboard.
 
@@ -71,7 +72,7 @@ MM-DD-YYYY.csv in UTC.
 * <b>Total_Test_Results</b> - Total number of people who have been tested.
 * <b>People_Hospitalized</b> - Total number of people hospitalized. (Nullified on Aug 31, see [Issue #3083](https://github.com/CSSEGISandData/COVID-19/issues/3083))
 * <b>Case_Fatality_Ratio</b> - Number recorded deaths * 100/ Number confirmed cases.
-* <b>UID</b> - Unique Identifier for each row entry. 
+* <b>UID</b> - Unique Identifier for each row entry.
 * <b>ISO3</b> - Officialy assigned country code identifiers.
 * <b>Testing_Rate</b> - Total test results per 100,000 persons. The "total test results" are equal to "Total test results (Positive + Negative)" from [COVID Tracking Project](https://covidtracking.com/).
 * <b>Hospitalization_Rate</b> - US Hospitalization Rate (%): = Total number hospitalized / Number cases. The "Total number hospitalized" is the "Hospitalized – Cumulative" count from [COVID Tracking Project](https://covidtracking.com/). The "hospitalization rate" and "Total number hospitalized" is only presented for those states which provide cumulative hospital data. (Nullified on Aug 31, see [Issue #3083](https://github.com/CSSEGISandData/COVID-19/issues/3083))
@@ -90,7 +91,7 @@ See [here](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_
 ---
 ## Data modification records
 This section will contain any modifications to our datasets as well as the reason for the change. If the error results from an issue on our collection of the data, the error will be listed in the errata.csv in the csse_covid19_time_series folder. If the error results due to a change from the source, the change and reasoning will  be listed below.
-Generalized Format: 
+Generalized Format:
 Date: Location | Change | Files affected | Reason/Other notes | Source
 * February 14: Hubei Province, China | Reduction of 108 deaths | Time_series_covid19_confirmed_global.csv | N/A | N/A
 * February 13: Hubei Province, China | Inclusion of probable cases (clinical symptoms) from source | Time_series_covid19_confirmed_global.csv | For lab-confirmed cases only (Before Feb 17), please refer to [who_covid_19_situation_reports](https://github.com/CSSEGISandData/COVID-19/tree/master/who_covid_19_situation_reports) | N/A
@@ -102,7 +103,7 @@ Date: Location | Change | Files affected | Reason/Other notes | Source
 * April 21-22:Benton and Franklin, WA | Data were adjusted/added to match the WA DOH report. See [errata](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/Errata.csv) for details.
 * April 22: Navajo Nation, US | Cases within the Navajo Nation had been tracked as an independent data source which resulted in double counting of the cases and deaths within Arizona, New Mexico, and Nevada. The US time series files for confirmed from 4/1 and 4/8 and the US time series files for deaths from 3/31 to 4/17 were corrected to remove the double counting. Adjustments were also made for Navajo County, AZ; Cococino County, AZ; Apache County, AZ; San Juan County, NM; McKinley County, NM; Cibola County, NM; Socorrco County, NM; and San Juan County, UT. See errata file for specfic details.
 * April 24, New York City, NY | Back distribution of probable deaths, removal of probable deaths as probable cases | time_series_covid19_confirmed_us.csv, time_series_covid19_deaths_us.csv | This change is in line with CDC reporting guidelines. | N/A
-* April 26: Australia | Revision of recovered data from 4/20 to 4/26 | time_series_covid19_recovered_global.csv | N/A | N/A 
+* April 26: Australia | Revision of recovered data from 4/20 to 4/26 | time_series_covid19_recovered_global.csv | N/A | N/A
 * April 28: Other | for consistency, we no longer report the hospitalization data as the max of "current - hospitalized" and "cumulative - hospitalized", and instead only report 'cumulative - hospitalized' from [Covid Tracking Project](https://covidtracking.com/). For states that do not provide cumulative hospital counts no hospital data will be shown.
 * April 28: Lithuania | Adjustment in reporting standards for confirmed cases. Prior to April 28, confirmed cases =  the number of positive laboratory test results rather than the number of positive individuals. | N/A | ([Source](https://lietuva.lt/wp-content/uploads/2020/04/UPDATE-April-28.pdf)).
 * April 30: United Kingdom | Release of deaths in care homes (prior reporting was hospitalized deaths only). All deaths backdistributed and all values changed | time_series_cvoid19_deaths.csv | N/A | ([Source](coronavirus.data.gov.uk))
@@ -141,7 +142,7 @@ Date: Location | Change | Files affected | Reason/Other notes | Source
 * September 13: Colorado, Texas | Texas Department of Health notifies that Colorado, Texas was subject to data entry error on September 12 that resulted in 545 cases being reported rather than 454. Time series adjusted to correct this mistake. | time_series_covid19_confirmed_US.csv | N/A | N/A
 * September 16: Pennsylvania | Pennsylvania released county level data for September 13 after generation of daily reports. We have used [this report](https://www.health.pa.gov/topics/Documents/Diseases%20and%20Conditions/COVID-19%20County%20Data/County%20Case%20Counts_9-13-2020.pdf) to assign county level data. Of note, the cases for Philadelphia appear to be anomalous in the official report (significant drop of cases) so we have chosen to maintain our previously reported number for this location.
 * October 5: Missouri | We have noted irregularities with the reporting for Missouri from September 29-October 1 due to changes in reporting by the Missouri Department of Health. We are working to correct our time series data.
-* October 13: Rhode Island, US | in collaboration with the Rhode Island Department of Health, we have been able to recreate the county level death time series for Rhode Island. Moving forward, we will be reporting deaths at the county level | time_series_deaths_us.csv & time_series_deaths_global.csv. Rhode Island will be publishing county level cases and deaths once per week. Please see issue #3229 for more details. 
+* October 13: Rhode Island, US | in collaboration with the Rhode Island Department of Health, we have been able to recreate the county level death time series for Rhode Island. Moving forward, we will be reporting deaths at the county level | time_series_deaths_us.csv & time_series_deaths_global.csv. Rhode Island will be publishing county level cases and deaths once per week. Please see issue #3229 for more details.
 * October 15: Luxembourg | Update for stale data October 8 through 14 | All time series files and daily reports | Updated via [daily report pdfs](https://data.public.lu/fr/datasets/covid-19-rapports-journaliers/#_) from national source
 * October 27: Alaska | Add non-resident cases from March 12 to October 26 | Confirmed cases - time series tables for the US and global | NA | [Cases by date reported](https://coronavirus-response-alaska-dhss.hub.arcgis.com/datasets/geographic-distribution-of-all-cases-by-date-reported)
 * October 30: Franklin County, VA | Rewrite time series 8/22 to 10/28 with appropriate data | All time series files and us daily reports for 8/22 through 10/28 | Internal mapping error had lead to cases in Franklin City, VA replacing values for Franklin County, VA as well as the source for Franklin City going stale
@@ -300,11 +301,12 @@ Date: Location | Change | Files affected | Reason/Other notes | Source
 * February 22, 2022 | California, US | Adjust California's data based on historic probable case data provided by CDPH | [Data Source](https://covid19.ca.gov/data-and-tools/)
 * March 01, 2022 | Ohio, US | To match Ohio’s new reporting standards, the Ohio death time series is being overwritten with date of death data, and the entire time series will be updated with each time Ohio updates their death data. This is expected to occur approximately once per week. | [Data Source](https://coronavirus.ohio.gov/static/dashboards/COVIDDeathData_CountyOfResidence.csv)
 * March 01, 2022 | California, US | Adjust California's data based on historic probable case data provided by CDPH | [Data Source](https://covid19.ca.gov/data-and-tools/)
+* March 7, 2022: Saskatchewan, Canada | Aligning data for confirmed cases and deaths with weekly reports provided by Government of Saskatchewan | Daily reports beginning February 6, 2022. | Prior data for this period had some gaps and was misaligned with the reports | [Source](https://publications.saskatchewan.ca/#/categories/5688)
 
 ## Retrospective reporting of (probable) cases and deaths
 This section reports instances where large numbers of historical cases or deaths have been reported on a single day. These reports cause anomalous spikes in our time series curves. When available, we liaise with the appropriate health department and distribute the cases or deaths back over the time series. If these are successful, they will be reported in the below section titled "Large Scale Back Distributions". A large proportion of these spikes are due to the release of probable cases or deaths.
-Generalized Format: 
-Date: Location | Change | Reason/Other notes | Source 
+Generalized Format:
+Date: Location | Change | Reason/Other notes | Source
 * April 12: France | Spike in cases | Inclusion of "cas possibles en ESMS" (probable cases from ESMS)| ([More details](https://github.com/CSSEGISandData/COVID-19/issues/2094))
 * April 21: Finland | Increase in deaths from 98 to 141 | Finnish National Institute for Health and Welfare included deaths in nursing homes in the Helsinki Metropolitan area for the first time. | [Source](https://www.foreigner.fi/articulo/coronavirus/finland-reports-44-increase-in-number-of-coronavirus-deaths/20200421174642005414.html)
 * April 23: New York City, New York, US | Reporting of probable deaths | N/A |[Source](https://www.nbcnews.com/health/health-news/live-blog/2020-04-23-coronavirus-news-n1190201/ncrd1190406#blogHeader) | **Back Distributed**
@@ -440,12 +442,12 @@ Date: Location | Change | Reason/Other notes | Source
 This section will serve to notify developers when we are able to successfully backdistribute any of the large instances of retrospective reporting.
 Generalized format:
 Date: Location | File | Change | Data source for change
-* April 24: New York City, New York, US (April 23) | Distribution of probable deaths from March 12 to April 24 (See errata.csv line 104) | 
+* April 24: New York City, New York, US (April 23) | Distribution of probable deaths from March 12 to April 24 (See errata.csv line 104) |
 * April 29: United Kingdom (April 29) | time_series_covid19_deaths_global.csv | Distribution of deaths outside of hospital | Official government website
 * June 12: Massachusetts, US (June 12) | Probable cases back distributed | Source is [here](https://www.mass.gov/info-details/covid-19-response-reporting).
 * June 13: Michigan | Through data provided by the Michigan Department of Health and Human Service’s (MDHHS) Communicable Disease Division, we were able to appropriately distribute the probable cases MDHHS began reporting on June 5th.
 * July 1: New York City, New York (July 1) | time_series_covid19_deaths_us.csv | Probable deaths back distributed via tables on [nychealth GitHub](https://github.com/nychealth/coronavirus-data/blob/master/deaths/probable-confirmed-dod.csv).
-* July 26: Chile (June 17) | Back distribution of probable and previously non-notified cases (all prior to June 17) | time_series_covid19_confirmed_global.csv | Data from [this repository] (https://github.com/MinCiencia/Datos-COVID19) managed by the Ministry of Science was used for the correction. Specifically, data from [product 45] CasosConfirmadosPorComunaHistorico_std.csv and CasosNoNotificadosPorComunaHistorico_std.csv was accessed on July 26 and the most current version of the documents at that time were used for the correction. For CasosConfirmadosPorComunaHistorico_std.csv, this was July 22nd. Cases were added to the day at the end of their respective epidemiological week. 
+* July 26: Chile (June 17) | Back distribution of probable and previously non-notified cases (all prior to June 17) | time_series_covid19_confirmed_global.csv | Data from [this repository] (https://github.com/MinCiencia/Datos-COVID19) managed by the Ministry of Science was used for the correction. Specifically, data from [product 45] CasosConfirmadosPorComunaHistorico_std.csv and CasosNoNotificadosPorComunaHistorico_std.csv was accessed on July 26 and the most current version of the documents at that time were used for the correction. For CasosConfirmadosPorComunaHistorico_std.csv, this was July 22nd. Cases were added to the day at the end of their respective epidemiological week.
 * August 2: New Jersey, US (June 25) | time_series_covid19_deaths_US.csv | Redistribution of probable deaths into Unassigned, New Jersey
 * August 6: Harris County, Texas (Texas July 27) | In line with alteration to reporting standards, time series for coronavirus deaths in Harris County has been updated from 3/7 to 8/5/2020 | Details can be found in the press release from the state [here](https://www.dshs.texas.gov/news/releases/2020/20200727.aspx).
 * September 22: Massachusetts (September 3) | Reconciliation of changes to probable cases | Detailed [here](https://github.com/CSSEGISandData/COVID-19/issues/3146)
@@ -543,7 +545,7 @@ International
 * New Brunswick, Canada: Providing data Monday-Friday.
 * Newfoundland and Labrador, Canada: Providing data Monday, Wednesday, and Friday.
 * Northwest Territories, Canada: Providing data Monday-Friday.
-* Saskatechewan, Canada: Providing data weekly (Thursdays). 
+* Saskatechewan, Canada: Providing data weekly (Thursdays).
 * Yukon, Canada: Providing data Monday-Friday.
 * Costa Rica: Updating data on Wednesdays and Saturdays only.
 * Denmark: Not updating case, death, or recovered data on the weekends.
@@ -588,7 +590,7 @@ United States:
   *	Unassigned, US: UID = 840 (country code3) + 900XX (state FIPS code). Ranging from 8409001 to 84090056.
   *	US counties: UID = 840 (country code3) + XXXXX (5-digit FIPS code).
   *	Exception type 1, such as recovered and Kansas City, ranging from 8407001 to 8407999.
-  *	Exception type 2, Bristol Bay plus Lake Peninsula replaces Bristol Bay and its FIPS code. Population is 836 (Bristol Bay) + 1,592 (Lake and Peninsula) = 2,428 (Bristol Bay plus Lake Peninsula). 2148 (Hoonah-Angoon) + 579 (Yakutat) = 2727 (Yakutat plus Hoonah-Angoon). UID is 84002282, the same as Yakutat. ~~New York City replaces New York County and its FIPS code. New York City popluation is calculated as Bronx (1,418,207) + Kings (2,559,903) + New York (1,628,706) + Queens (2,253,858) + Richmond (476,143) = NYC (8,336,817). (updated on Aug 31)~~ 
+  *	Exception type 2, Bristol Bay plus Lake Peninsula replaces Bristol Bay and its FIPS code. Population is 836 (Bristol Bay) + 1,592 (Lake and Peninsula) = 2,428 (Bristol Bay plus Lake Peninsula). 2148 (Hoonah-Angoon) + 579 (Yakutat) = 2727 (Yakutat plus Hoonah-Angoon). UID is 84002282, the same as Yakutat. ~~New York City replaces New York County and its FIPS code. New York City popluation is calculated as Bronx (1,418,207) + Kings (2,559,903) + New York (1,628,706) + Queens (2,253,858) + Richmond (476,143) = NYC (8,336,817). (updated on Aug 31)~~
   *	Exception type 3, Diamond Princess, US: 84088888; Grand Princess, US: 84099999.
   * Exception type 4, municipalities in Puerto Rico are regarded as counties with FIPS codes. The FIPS code for the unassigned category is defined as 72999.
 4. Population data sources.
@@ -608,3 +610,10 @@ United States:
 * The Admin0 level population could be different from the sum of Admin1 level population since they may be from different sources.
 
 Disclaimer: \*The names of locations included on the Website correspond with the official designations used by the U.S. Department of State. The presentation of material therein does not imply the expression of any opinion whatsoever on the part of JHU concerning the legal status of any country, area or territory or of its authorities. The depiction and use of boundaries, geographic names and related data shown on maps and included in lists, tables, documents, and databases on this website are not warranted to be error free nor do they necessarily imply official endorsement or acceptance by JHU.
+
+## [How to Suggest a Change in the Data](#how-to-suggest-changes)
+
+1. Fork the repository if you haven't done it earlier
+1. Edit the files for the dates you want to change
+1. Edit the timeseries files so that your data is reflected
+1. Edit this README file to describe the change that you proposed with the general format: Generalized Format: Date: Location | Change | Files affected | Reason/Other notes | Source
