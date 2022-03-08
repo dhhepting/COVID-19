@@ -612,7 +612,7 @@ United States:
 Disclaimer: \*The names of locations included on the Website correspond with the official designations used by the U.S. Department of State. The presentation of material therein does not imply the expression of any opinion whatsoever on the part of JHU concerning the legal status of any country, area or territory or of its authorities. The depiction and use of boundaries, geographic names and related data shown on maps and included in lists, tables, documents, and databases on this website are not warranted to be error free nor do they necessarily imply official endorsement or acceptance by JHU.
 
 ---
-## How to Suggest a Change in the Data
+## How to Suggest a Change in the Data {#how-to-suggest-changes}
 
 1. Fork the repository if you haven't done it earlier
 1. Edit the files for the dates you want to change
