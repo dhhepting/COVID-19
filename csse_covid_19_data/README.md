@@ -10,7 +10,7 @@
  * [Large-scale back distributions](#large-scale-back-distributions)
  * [Irregular Update Schedules](#irregular-update-schedules)
  * [UID Lookup Table Logic](#uid-lookup-table-logic)
- * [How to Suggest a Change in the Data](#how-to-suggest-changes)
+ * [How to Suggest a Change in the Data](#how-to-suggest-a-change-in-the-data)
 ---
 
 ## [Daily reports (csse_covid_19_daily_reports)](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)
@@ -301,7 +301,7 @@ Date: Location | Change | Files affected | Reason/Other notes | Source
 * February 22, 2022 | California, US | Adjust California's data based on historic probable case data provided by CDPH | [Data Source](https://covid19.ca.gov/data-and-tools/)
 * March 01, 2022 | Ohio, US | To match Ohio’s new reporting standards, the Ohio death time series is being overwritten with date of death data, and the entire time series will be updated with each time Ohio updates their death data. This is expected to occur approximately once per week. | [Data Source](https://coronavirus.ohio.gov/static/dashboards/COVIDDeathData_CountyOfResidence.csv)
 * March 01, 2022 | California, US | Adjust California's data based on historic probable case data provided by CDPH | [Data Source](https://covid19.ca.gov/data-and-tools/)
-* March 7, 2022: Saskatchewan, Canada | Aligning data for confirmed cases and deaths with weekly reports provided by Government of Saskatchewan | Daily reports beginning February 6, 2022. | Prior data for this period had some gaps and was misaligned with the reports | [Source](https://publications.saskatchewan.ca/#/categories/5688)
+* March 07, 2022: Saskatchewan, Canada | Aligning data for confirmed cases and deaths with weekly reports provided by Government of Saskatchewan | Daily reports beginning February 6, 2022. | Prior data for this period had some gaps and was misaligned with the reports | [Source](https://publications.saskatchewan.ca/#/categories/5688)
 
 ## Retrospective reporting of (probable) cases and deaths
 This section reports instances where large numbers of historical cases or deaths have been reported on a single day. These reports cause anomalous spikes in our time series curves. When available, we liaise with the appropriate health department and distribute the cases or deaths back over the time series. If these are successful, they will be reported in the below section titled "Large Scale Back Distributions". A large proportion of these spikes are due to the release of probable cases or deaths.
